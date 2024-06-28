@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
  
 export default function SharedLayout() {
   const [activeGame, setActiveGame] = useState(null);
@@ -30,11 +31,10 @@ export default function SharedLayout() {
       </AnimatePresence>
       <AnimatePresence>
         {activeGame ? (
-          <div className="active-game">
+          <div className="active-game rounded-none">
             <motion.div
               layoutId={`card-${activeGame.title}`}
               className="inner"
-              style={{ borderRadius: 0 }}
             >
               <div className="header">
                 
@@ -56,8 +56,9 @@ export default function SharedLayout() {
                   <motion.button
                     layoutId={`button-${activeGame.title}`}
                     className="button"
+                    onClick={()=> setActiveGame(null)}
                   >
-                    X
+                    <X/>
                   </motion.button>
                 </div>
               </div>
@@ -74,13 +75,14 @@ export default function SharedLayout() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="list">
+      <ul className="list gap-5 flex flex-col w-fit items-center">
         {GAMES.map((game) => (
           <motion.li
+          whileTap={{ scale: 0.98 }}
             layoutId={`card-${game.title}`}
             key={game.title}
             onClick={() => setActiveGame(game)}
-            style={{ borderRadius: 8 }}
+            className="bg-white rounded-2xl p-4"
           >
             
             <div className="game-wrapper">
@@ -117,36 +119,19 @@ const GAMES = [
       "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/space.png",
   },
   {
-    title: "Angry Rabbits",
-    description: "They are coming for you.",
+    title: "Self-knowledge",
+    description: "Prompts for personal growth.",
     longDescription:
       "The rabbits are angry and they are coming for you. You have to defend yourself with your carrot gun. The game is not simple, you have to be fast and accurate to survive.",
     image:
       "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/rabbit.png",
   },
   {
-    title: "Ghost town",
-    description: "Find the ghosts.",
+    title: "Date Nights",
+    description: "Spice up your lovelife.",
     longDescription:
       "You are in a ghost town and you have to find the ghosts. But be careful, they are dangerous.",
     image:
       "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/ghost.webp",
-  },
-  {
-    title: "Pirates in the jungle",
-    description: "Find the treasure.",
-    longDescription:
-      "You are a pirate and you have to find the treasure in the jungle. But be careful, there are traps and wild animals.",
-    image:
-      "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/pirate.png",
-  },
- 
-  {
-    title: "Lost in the mountains",
-    description: "Find your way home.",
-    longDescription:
-      "You are lost in the mountains and you have to find your way home. But be careful, there are dangerous animals and you can get lost.",
-    image:
-      "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/boy.webp",
   },
 ];

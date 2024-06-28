@@ -75,24 +75,12 @@
     }
   }
 
-
-.list {
-  position: relative;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  margin: 48px 0;
-}
-
 .list li {
   display: flex;
   width: 386px;
   cursor: pointer;
   align-items: center;
   gap: 16px;
-  padding: 0;
 }
 
 .game-wrapper {
@@ -100,7 +88,6 @@
   flex-grow: 1;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #d4d6d861;
 }
 
 .list li:last-of-type .game-wrapper {
@@ -125,15 +112,6 @@
 .game-description {
   font-size: 14px;
   color: #63635d;
-}
-
-.button {
-  border-radius: 9999px;
-  background: #f1f0ef;
-  padding: 4px 12px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #007aff;
 }
 
 .active-game {
