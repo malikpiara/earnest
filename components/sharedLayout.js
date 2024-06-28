@@ -68,6 +68,7 @@ export default function SharedLayout() {
               drag
               dragSnapToOrigin
               dragConstraints={{ left: 0, right: 0 }}
+              whileTap={{ scale: 1.02 }}
               className="flex flex-col md:w-72 md:h-96 h-[85dvh] bg-cyan-950 rounded-2xl overflow-hidden inset-0 m-auto" >
                 <div className="flex text-3xl md:text-xl text-cyan-700 relative top-20 w-9/12 md:w-11/12 md:m-5 ml-10">What is the kindest thing someone did for you recently?</div>
                 <div className='flex rounded-full w-72 h-72 bg-cyan-800 opacity-40 blur-2xl relative top-40'/>
@@ -95,7 +96,7 @@ export default function SharedLayout() {
             layoutId={`card-${game.title}`}
             key={game.title}
             onClick={() => setActiveGame(game)}
-            className="bg-white rounded-2xl p-4"
+            className="bg-stone-200 rounded-2xl p-4"
           >
             
             <div className="game-wrapper">
