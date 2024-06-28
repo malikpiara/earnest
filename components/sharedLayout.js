@@ -71,9 +71,9 @@ export default function SharedLayout() {
               >
                 {activeGame.longDescription}
               </motion.p>
-              <motion.div className="flex w-72 h-96 bg-pink-300 rounded-2xl m-auto overflow-hidden" >
-                <div className="flex text-xl leading-tight mt-8 ml-6">What is the kindest thing someone did for you?</div>
-                <div className='rounded-full w-72 h-72 bg-red-600 opacity-40 blur-2xl relative top-40'/>
+              <motion.div className="flex flex-col md:w-72 md:h-96 w-11/12 h-svh bg-pink-300 rounded-2xl m-auto overflow-hidden" >
+                <div className="flex text-xl mt-8 ml-6">What is the kindest thing someone did for you?</div>
+                <div className='flex rounded-full w-72 h-72 bg-red-600 opacity-40 blur-2xl relative top-40'/>
                 
                 </motion.div>
             </motion.div>
