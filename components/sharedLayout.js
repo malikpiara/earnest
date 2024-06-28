@@ -62,19 +62,26 @@ export default function SharedLayout() {
                   </motion.button>
                 </div>
               </div>
-              <motion.p
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0, transition: { duration: 0.05 } }}
-                className="long-description"
-              >
-                {activeGame.longDescription}
-              </motion.p>
-              <motion.div className="flex flex-col md:w-72 md:h-96 w-11/12 h-svh bg-pink-300 rounded-2xl m-auto overflow-hidden" >
-                <div className="flex text-xl mt-8 ml-6">What is the kindest thing someone did for you?</div>
+              
+              <motion.div className="relative m-auto">
+              <motion.div
+              drag
+              dragSnapToOrigin
+              dragConstraints={{ left: 0, right: 0 }}
+              className="flex flex-col md:w-72 md:h-96 h-svh bg-cyan-950 rounded-2xl overflow-hidden inset-0 m-auto" >
+                <div className="flex text-3xl md:text-xl text-cyan-700 relative top-20 w-10/12 md:w-11/12 md:m-5 ml-12">What is the kindest thing someone did for you?</div>
+                <div className='flex rounded-full w-72 h-72 bg-cyan-800 opacity-40 blur-2xl relative top-40'/>
+                
+                </motion.div>
+                <motion.div
+              drag
+              dragSnapToOrigin
+              dragConstraints={{ left: 0, right: 0 }}
+              className="flex flex-col md:w-72 md:h-96 h-svh bg-pink-300 rounded-2xl overflow-hidden inset-0 m-auto" >
+                <div className="flex text-3xl md:text-xl text-pink-500 relative top-20 w-11/12 m-5">What is the kindest thing someone did for you?</div>
                 <div className='flex rounded-full w-72 h-72 bg-red-600 opacity-40 blur-2xl relative top-40'/>
                 
+                </motion.div>
                 </motion.div>
             </motion.div>
           </div>
