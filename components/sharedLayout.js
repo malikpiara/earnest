@@ -71,11 +71,17 @@ export default function SharedLayout() {
               >
                 {activeGame.longDescription}
               </motion.p>
+              <motion.div className="flex w-72 h-96 bg-pink-300 rounded-2xl m-auto overflow-hidden" >
+                <div className="flex text-xl leading-tight mt-8 ml-6">What is the kindest thing someone did for you?</div>
+                <div className='rounded-full w-72 h-72 bg-red-600 opacity-40 blur-2xl relative top-40'/>
+                
+                </motion.div>
             </motion.div>
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="list gap-5 flex flex-col w-fit items-center">
+      <ul className="list gap-5 flex flex-col w-fit items-center my-5">
+        <h1>Earnest Cards</h1>
         {GAMES.map((game) => (
           <motion.li
           whileTap={{ scale: 0.98 }}
