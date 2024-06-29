@@ -3,6 +3,13 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { QuestionCard } from "./card";
+import { QuestionCardStack } from "./stack";
+
+const questions = [
+    { id: 1, text: "What is the kindest thing someone did for you recently?" },
+    { id: 2, text: "What is your favorite way to spend a rainy day?" },
+    { id: 3, text: "What is one thing you are grateful for today?" },
+  ]; // Array of questions
  
 export default function Categories() {
   const [activeGame, setActiveGame] = useState(null);
@@ -64,8 +71,11 @@ export default function Categories() {
                 </div>
               </div>
               
-            <motion.div className="relative m-auto">
-                <QuestionCard/>
+            <motion.div className="relative w-full flex justify-center items-center">
+             
+            <QuestionCardStack questions={questions}/>
+
+
             </motion.div>
         </motion.div>
           </div>

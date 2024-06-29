@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 
-export const QuestionCard = () => {
+export const QuestionCard = ({ question, onSwipeComplete }) => {
     const controls = useAnimation(); // Add controls for animation
 
     const handleDragEnd = (event, info) => {
@@ -12,8 +12,9 @@ export const QuestionCard = () => {
                 x: offset > 0 ? 1000 : -1000,
                 opacity: 0,
                 transition: { duration: 0.5 }
+            }).then(() => {
+                onSwipeComplete();
             });
-            
         } else {
             controls.start({
                 x: 0,
@@ -31,7 +32,7 @@ export const QuestionCard = () => {
             whileTap={{ scale: 1.02 }}
             onDragEnd={handleDragEnd}
             className="flex flex-col md:w-72 md:h-96 h-[85dvh] bg-cyan-950 rounded-2xl overflow-hidden inset-0 m-auto" >
-                <div className="flex text-3xl md:text-xl text-cyan-700 relative top-20 w-9/12 md:w-11/12 md:m-5 ml-10">What is the kindest thing someone did for you recently?</div>
+                <div className="flex text-3xl md:text-xl text-cyan-700 relative top-20 w-9/12 md:w-11/12 md:m-5 ml-10">{question.text}</div>
                 <div className='flex rounded-full w-72 h-72 bg-cyan-800 opacity-40 blur-2xl relative top-40'/>
         </motion.div>
     )
