@@ -9,7 +9,10 @@ const questions = [
     { id: 1, text: "What is the kindest thing someone did for you recently?" },
     { id: 2, text: "What is your favorite way to spend a rainy day?" },
     { id: 3, text: "What is one thing you are grateful for today?" },
-  ]; // Array of questions
+    { id: 4, text: "In what areas of life do you care most about what others think?" },
+    { id: 5, text: "What do you tell yourself when you succeed?" },
+    { id: 6, text: "What is your favorite way to spend a sunny day?" }
+  ];
  
 export default function Categories() {
   const [activeGame, setActiveGame] = useState(null);
