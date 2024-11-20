@@ -85,14 +85,14 @@ export default function Categories() {
         ) : null}
       </AnimatePresence>
       <ul className="list gap-5 flex flex-col w-fit items-center my-12">
-        <h1>Earnest Cards</h1>
+        <h1>Pick a topic</h1>
         {GAMES.map((game) => (
           <motion.li
           whileTap={{ scale: 0.98 }}
             layoutId={`card-${game.title}`}
             key={game.title}
             onClick={() => setActiveGame(game)}
-            className="bg-stone-200 rounded-2xl p-4 h-48"
+            className="bg-[#eee9df] rounded-2xl p-4 h-48"
           >
             
             <div className="game-wrapper">
