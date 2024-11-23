@@ -7,7 +7,7 @@ export default function manifest() {
       display: 'standalone',
       orientation: "portrait",
       background_color: '#ffffff',
-      theme_color: '#BEB3FF',
+      theme_color: '#ffffff',
       screenshots: [
         {
          "src": "image.png",
