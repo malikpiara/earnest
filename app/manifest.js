@@ -5,6 +5,7 @@ export default function manifest() {
       description: 'Questions for deeper conversations & personal growth',
       start_url: '/',
       display: 'standalone',
+      orientation: "portrait",
       background_color: '#ffffff',
       theme_color: '#BEB3FF',
       screenshots: [
