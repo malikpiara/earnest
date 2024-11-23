@@ -32,8 +32,8 @@ export const QuestionCard = ({ question, background, onSwipeComplete }) => {
             whileTap={{ scale: 1.02 }}
             onDragEnd={handleDragEnd}
             className={`flex flex-col md:w-72 md:h-96 h-[85dvh]  ${[background.bg]} rounded-2xl overflow-hidden inset-0 m-auto`} >
-                <div className={`flex text-3xl md:text-xl ${[background.text]} relative top-20 w-9/12 md:w-11/12 md:m-5 ml-10 font-medium`}>{question.text}</div>
-                <div className={`flex rounded-full w-72 h-72 ${[background.blob]} blur-2xl relative top-40`}/>
+                <div className={`flex text-3xl md:text-2xl ${[background.text]} relative top-20 w-10/12 md:w-11/12 md:m-5 ml-10 font-medium leading-normal`}>{question.text}</div>
+                <div className={`flex rounded-full w-72 h-72 ${[background.blob]} animate-pulse blur-2xl relative top-40`}/>
         </motion.div>
     )
 }
