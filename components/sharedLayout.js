@@ -76,7 +76,7 @@ export default function Categories() {
               
             <motion.div className="relative w-full flex justify-center items-center">
              
-            <QuestionCardStack questions={questions}/>
+            <QuestionCardStack questions={activeGame.questions} background={activeGame.background}/>
 
 
             </motion.div>
@@ -124,24 +124,57 @@ const GAMES = [
     title: "Deep Conversations",
     description: "Carefully curated for cultivating friendships.",
     longDescription:
-      "A wide space of possibilities obstructs our ability to reason and creates room for bad decisions. Its easy to think through the trade-offs and consequences of picking one option when we have four. When we have hundred, our ability to reason becomes crippled. We do nott have time or capacity to fully consider every option.",
+      "Carefully curated for cultivating friendships.",
     image:
       "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/space.png",
+    background: {
+      bg: "bg-[#BEB3FF]",
+      text: "text-[#5f52ad]",
+      blob: "bg-[#9181ec]",
+    },
+    questions: [
+      { id: 1, text: "What is the kindest thing someone did for you recently?" },
+      { id: 2, text: "What is your favorite way to spend a rainy day?" },
+      { id: 4, text: "In what areas of life do you care most about what others think?" },
+      { id: 5, text: "What do you tell yourself when you succeed?" },
+      { id: 6, text: "What is your favorite way to spend a sunny day?" }
+  ],
   },
   {
     title: "Self-knowledge",
     description: "Prompts for personal growth.",
     longDescription:
-      "The rabbits are angry and they are coming for you. You have to defend yourself with your carrot gun. The game is not simple, you have to be fast and accurate to survive.",
+      "Prompts for personal growth.",
     image:
       "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/rabbit.png",
+    background: {
+      bg: "bg-[#fbf292]",
+      text: "text-[#98913b]",
+      blob: "bg-[#e8ca46]",
+    },
+    questions: [
+        { id: 2, text: "What is your favorite way to spend a rainy day?" },
+        { id: 3, text: "What is one thing you are grateful for today?" },
+        { id: 4, text: "In what areas of life do you care most about what others think?" },
+    ],
   },
   {
     title: "Date Nights",
     description: "Spice up your lovelife.",
     longDescription:
-      "You are in a ghost town and you have to find the ghosts. But be careful, they are dangerous.",
+      "Spice up your lovelife.",
     image:
       "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/ghost.webp",
+    background: {
+      bg: "bg-[#ffd0eb]",
+      text: "text-[#f85fb7]",
+      blob: "bg-[#f681c4]",
+    },
+    questions: [
+      { id: 1, text: "What is the kindest thing someone did for you recently?" },
+      { id: 2, text: "What is your favorite way to spend a rainy day?" },
+      { id: 4, text: "In what areas of life do you care most about what others think?" },
+      { id: 6, text: "What is your favorite way to spend a sunny day?" }
+    ],
   },
 ];

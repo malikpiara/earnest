@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { QuestionCard } from "./card";
 
-export const QuestionCardStack = ({ questions }) => {
+export const QuestionCardStack = ({ questions, background }) => {
   const [stack, setStack] = useState(questions);
 
   const handleSwipeComplete = () => {
@@ -22,7 +22,7 @@ export const QuestionCardStack = ({ questions }) => {
             transition={{ duration: 0.4 }}
             className="absolute"
           >
-            <QuestionCard question={question} onSwipeComplete={handleSwipeComplete} />
+            <QuestionCard question={question} onSwipeComplete={handleSwipeComplete} background={background} />
           </motion.div>
         ))}
       </AnimatePresence>
