@@ -16,6 +16,23 @@ const questions = [
  
 export default function Categories() {
   const [activeGame, setActiveGame] = useState(null);
+
+  const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  // Modify how activeGame is set to include shuffled questions
+  const handleGameSelect = (game) => {
+    setActiveGame({
+      ...game,
+      questions: shuffleArray(game.questions)
+    });
+  };
  
   useEffect(() => {
     function onKeyDown(event) {
@@ -91,7 +108,7 @@ export default function Categories() {
           whileTap={{ scale: 0.98 }}
             layoutId={`card-${game.title}`}
             key={game.title}
-            onClick={() => setActiveGame(game)}
+            onClick={() => handleGameSelect(game)}
             className="bg-[#eee9df] rounded-2xl p-4 h-48"
           >
             
@@ -197,11 +214,14 @@ const GAMES = [
         { id: 2, text: "What is your favorite way to spend a rainy day?" },
         { id: 3, text: "What is one thing you are grateful for today?" },
         { id: 4, text: "In what areas of life do you care most about what others think?" },
+        { id: 14, text: "When do you feel lonely?" },
+        { id: 9, text: "In what ways have your parents influenced your choice of partner?" },
+      { id: 10, text: "What are the best things you owe your parents?" },
     ],
   },
   {
     title: "Date Nights",
-    description: "Spice up your lovelife.",
+    description: "Spark deeper connection.",
     longDescription:
       "Spice up your lovelife.",
     image:
@@ -217,6 +237,12 @@ const GAMES = [
       { id: 4, text: "In what areas of life do you care most about what others think?" },
       { id: 6, text: "What is your favorite way to spend a sunny day?" },
       { id: 24, text: "Are sexual fantasies a good thing to be shared?" },
+      { id: 14, text: "When do you feel lonely?" },
+      { id: 39, text: "Where do you feel most at home?" },
+      { id: 34, text: "If you had to choose between a happy home life and a mediocre career, or a successful career and a mediocre home life, which would you choose?" },
+      { id: 9, text: "In what ways have your parents influenced your choice of partner?" },
+      { id: 10, text: "What are the best things you owe your parents?" },
+      { id: 28, text: "What makes a person a good travelling companion?" },
     ],
   },
 ];
