@@ -2,7 +2,7 @@
 import withSerwist from '@serwist/next';
 
 const serwistConfig = withSerwist({
-  swSrc: "app/sw.js",
+  swSrc: "./sw.js",
   swDest: "public/sw.js",
   disable: process.env.NODE_ENV === 'development',
 });
