@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@serwist/next": "^9.0.10",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.12",
